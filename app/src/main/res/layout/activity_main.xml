@@ -6,31 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <WebView
+    <EditText
+        android:id="@+id/et_1"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="70dp"
+        android:ems="10"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:hint="@string/app_name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sw1" />
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="70dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:onClick="sendata"
+        android:text="@string/send"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_1" />
+
+    <WebView
+        android:id="@+id/wb_1"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="239dp"
-        android:layout_height="62dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="103dp" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="223dp"
-        android:layout_height="74dp"
-        android:text="Button"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="264dp" />
-
+    <Switch
+        android:id="@+id/sw1"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="305dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="32dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
+        android:text="@string/flag"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/et_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
