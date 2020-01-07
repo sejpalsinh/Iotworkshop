@@ -1,11 +1,8 @@
 package com.example.iotworkshop;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
-import android.view.accessibility.AccessibilityManager;
 import android.webkit.GeolocationPermissions;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
@@ -30,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         sw = findViewById(R.id.sw1);
     }
 
-
+    //*********************************************************************************************************************************
     @SuppressLint({"SetJavaScriptEnabled", "ShowToast"})
     public void setdatainweb(String p1, String p2)
     {
@@ -51,11 +48,10 @@ public class MainActivity extends AppCompatActivity {
         System.out.println(url);
         myWebView.loadUrl(url);
         Toast.makeText(this,"Data send",Toast.LENGTH_LONG);
-
     }
-
     public void sendata(View view) {
         String s = sw.isChecked() ? "1" : "0";
         setdatainweb(editText.getText().toString(),s);
     }
+    //*********************************************************************************************************************************
 }
