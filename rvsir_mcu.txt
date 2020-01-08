@@ -1,0 +1,38 @@
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h> 
+#include <ESP8266WebServer.h>
+#include <ESP8266HTTPClient.h>
+void setup() {
+  Serial.begin(115200);
+  WiFi.mode(WIFI_OFF);     
+  delay(1000);
+  WiFi.mode(WIFI_STA);   
+  WiFi.begin("tony", "12345678"); 
+  Serial.println("");
+  Serial.print("Connecting");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("Connected to tony "); 
+}
+String getDataSej();
+
+void loop() {
+  String webData;
+  webData = getDataSej();
+  Serial.println(webData);
+  delay(3000);
+}
+
+
+String getDataSej()
+{
+  HTTPClient http;
+  http.begin("http://datadotgov.000webhostapp.com/getf.php");  // put link here...
+  //http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+  int httpCode = http.POST("status=" + String(analogRead(A0)) + "&station=A");
+  String payload = http.getString();
+  http.end();
+  return payload;
+}
